@@ -1,0 +1,98 @@
+.expenses_list_main {
+  display: flex;
+  justify-content: center;
+  .expenses_container {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    gap: 10px;
+    .income_column,
+    .expenses_column {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 0;
+      flex-grow: 1;
+      padding: 15px;
+      h2 {
+        font-size: 20px;
+        font-weight: 500;
+        text-transform: uppercase;
+      }
+      mat-card {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        cursor: pointer;
+        position: relative;
+        background-color: rgb(247, 245, 246);
+        min-height: 60px;
+        mat-card-content {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 16px;
+          h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 0;
+          }
+          h4 {
+            font-size: 20px;
+            font-weight: 400;
+            margin: 0;
+          }
+        }
+        .close_icon {
+          height: 24px;
+          width: 24px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+          background-color: rgba(132, 132, 132, 0.467);
+          position: absolute;
+          right: -9px;
+          top: -9px;
+
+          mat-icon {
+            color: white;
+          }
+          transition: opacity 0.2s ease-in, transform 0.2s ease-in;
+          transform: scale(0);
+          opacity: 0;
+        }
+        .close_icon:hover {
+          background-color: rgb(230, 3, 3);
+        }
+      }
+
+      mat-card:hover {
+        background-color: rgb(227, 227, 227);
+      }
+      mat-card:hover .close_icon {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    .income_column {
+      h2 {
+        color: rgb(4, 207, 4);
+      }
+    }
+    .expenses_column {
+      h2 {
+        color: red;
+      }
+    }
+  }
+}
+.income {
+  mat-card-content {
+    color: green;
+  }
+}
+.expenses {
+  mat-card-content {
+    color: red;
+  }
+}

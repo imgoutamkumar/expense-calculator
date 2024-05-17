@@ -1,0 +1,124 @@
+<div class="expenses_list_main">
+  <div class="expenses_container">
+    <div class="income_column">
+      <h2>Income</h2>
+      @for (item of budgetItems; track $index) { @if (item.amount>=0) {
+      <mat-card class="income">
+        <mat-card-content>
+          <span>
+            <h4>{{ item.description }}</h4>
+          </span>
+
+          <div
+            style="
+              display: flex;
+              width: 80px;
+              height: 40px;
+              align-items: center;
+              justify-content: center;
+              background-color: #0080003d;
+              border-radius: 4px;
+              margin-left: 10px;
+            "
+          >
+            <span>
+              <h3>{{ item.amount }}</h3></span
+            >
+          </div>
+        </mat-card-content>
+        <div class="close_icon" (click)="closeButtonClicked(item)">
+          <mat-icon
+            aria-hidden="false"
+            aria-label="Example home icon"
+            fontIcon="close"
+          ></mat-icon>
+        </div>
+      </mat-card>
+      } }
+
+      <!-- <mat-card class="income">
+        <mat-card-content>
+          <span>test</span>
+
+          <div
+            style="
+              display: flex;
+              width: 80px;
+              align-items: center;
+              justify-content: center;
+            "
+          >
+            <span> 100</span>
+          </div>
+        </mat-card-content>
+        <div class="close_icon">
+          <mat-icon
+            aria-hidden="false"
+            aria-label="Example home icon"
+            fontIcon="close"
+          ></mat-icon>
+        </div>
+      </mat-card> -->
+    </div>
+    <div class="expenses_column">
+      <h2>Expenses</h2>
+      @for (item of budgetItems; track $index) { @if (item.amount<0) {
+      <mat-card class="expenses">
+        <mat-card-content>
+          <span
+            ><h4>{{ item.description }}</h4></span
+          >
+
+          <div
+            style="
+              display: flex;
+              width: 80px;
+              height: 40px;
+              align-items: center;
+              justify-content: center;
+              background-color: #ec08083d;
+              border-radius: 4px;
+              margin-left: 10px;
+            "
+          >
+            <span
+              ><h3>{{ item.amount }}</h3>
+            </span>
+          </div>
+        </mat-card-content>
+        <div class="close_icon" (click)="closeButtonClicked(item)">
+          <mat-icon
+            aria-hidden="false"
+            aria-label="Example home icon"
+            fontIcon="close"
+          ></mat-icon>
+        </div>
+      </mat-card>
+      } }
+
+      <!-- <mat-card class="expenses">
+        <mat-card-content>
+          <span>test</span>
+
+          <div
+            style="
+              display: flex;
+              width: 80px;
+              align-items: center;
+              justify-content: center;
+            "
+          >
+            <span> 100</span>
+          </div>
+        </mat-card-content>
+        <div class="close_icon">
+          <mat-icon
+            aria-hidden="false"
+            aria-label="Example home icon"
+            fontIcon="close"
+          ></mat-icon>
+        </div>
+      </mat-card> -->
+    </div>
+  </div>
+</div>

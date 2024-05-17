@@ -1,0 +1,36 @@
+<form [formGroup]="addItemForm" (ngSubmit)="submitAddItemForm()">
+  <div class="example-container">
+    <mat-form-field floatLabel="always" appearance="outline" style="width: 20%">
+      <mat-label>Amount</mat-label>
+      <input
+        matInput
+        type="number"
+        class="example-right-align"
+        placeholder="enter amount"
+        formControlName="amount"
+        required
+      />
+      <span matTextPrefix>INR&nbsp;</span>
+      <span matTextSuffix>.00</span>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" style="width: 50%">
+      <mat-label>Enter description</mat-label>
+      <input
+        matInput
+        type="text"
+        placeholder="enter description"
+        formControlName="description"
+        required
+      />
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="warn"
+      type="submit"
+      [disabled]="!addItemForm.valid"
+    >
+      Add
+    </button>
+  </div>
+</form>

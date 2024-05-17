@@ -1,0 +1,56 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row style="display: flex; justify-content: space-between">
+    <span>Expense Calculator</span>
+    <span
+      style="display: flex; justify-content: center; cursor: pointer"
+      (click)="openCalculator()"
+    >
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Example home icon"
+        fontIcon="calculate"
+      ></mat-icon>
+    </span>
+  </mat-toolbar-row>
+
+  <mat-toolbar-row
+    style="
+      height: 120px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      background-image: linear-gradient(
+        to right,
+        rgb(243, 32, 180),
+        rgba(251, 241, 248, 0.637)
+      );
+    "
+  >
+    <span><h1 style="font-size: 50px">1000</h1></span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<section style="padding: 20px">
+  <div class="addItem_form_container">
+    <app-add-item-form
+      style="width: 100%"
+      (data)="addItem($event)"
+    ></app-add-item-form>
+  </div>
+</section>
+
+<section style="padding: 20px" *ngIf="isListEmpty; else emptyList">
+  <app-expenses-list
+    [budgetItems]="items"
+    (close)="removeItem($event)"
+  ></app-expenses-list>
+</section>
+<ng-template #emptyList>
+  <div style="display: flex; justify-content: center; height: 350px">
+    <img
+      src="https://cdn.dribbble.com/users/634336/screenshots/2246883/media/7beefb96feac302ee313cf510fca4577.png?resize=800x600&vertical=center"
+      alt=""
+      style="height: 100%"
+    />
+  </div>
+</ng-template>
