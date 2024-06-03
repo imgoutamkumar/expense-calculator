@@ -22,7 +22,6 @@
         display: flex;
         justify-content: center;
         margin-top: 20px;
-        cursor: pointer;
         position: relative;
         background-color: rgb(247, 245, 246);
         min-height: 60px;
@@ -53,7 +52,7 @@
           position: absolute;
           right: -9px;
           top: -9px;
-
+          cursor: pointer;
           mat-icon {
             color: white;
           }
@@ -89,10 +88,38 @@
 .income {
   mat-card-content {
     color: green;
+    .amount {
+      display: flex;
+      width: 80px;
+      height: 40px;
+      align-items: center;
+      justify-content: center;
+      background-color: #0080003d;
+      border-radius: 4px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+    .amount:hover {
+      border: 1px solid #008000;
+    }
   }
 }
 .expenses {
   mat-card-content {
     color: red;
+    .amount {
+      display: flex;
+      width: 80px;
+      height: 40px;
+      align-items: center;
+      justify-content: center;
+      background-color: #ec08083d;
+      border-radius: 4px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+    .amount:hover {
+      border: 1px solid #ec0808;
+    }
   }
 }

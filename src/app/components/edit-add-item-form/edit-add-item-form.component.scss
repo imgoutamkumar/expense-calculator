@@ -1,0 +1,9 @@
+.example-container {
+  margin: 10px;
+  display: flex;
+  width: 800px;
+  flex-direction: column;
+  mat-form-field {
+    margin-right: 10px;
+  }
+}
