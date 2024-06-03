@@ -11,13 +11,11 @@ import {
   MAT_DIALOG_DATA,
   MatDialogActions,
   MatDialogContent,
-  MatDialogModule,
   MatDialogRef,
 } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { CommonService } from '../../services/common.service';
 
 @Component({
   selector: 'app-edit-add-item-form',
@@ -41,8 +39,7 @@ export class EditAddItemFormComponent implements OnInit {
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
     private dialogRef: MatDialogRef<EditAddItemFormComponent>,
-    private fb: FormBuilder,
-    private commonService: CommonService
+    private fb: FormBuilder
   ) {
     this.editAddItemForm = this.fb.group({
       amount: ['', Validators.required],
@@ -58,7 +55,5 @@ export class EditAddItemFormComponent implements OnInit {
 
   submitEditAddItemForm() {
     this.dialogRef.close(this.editAddItemForm.value);
-    //this.updatedData.emit(this.editAddItemForm.value);
-    //this.commonService.sendUpdateddData(this.editAddItemForm.value);
   }
 }

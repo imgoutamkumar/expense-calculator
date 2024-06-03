@@ -4,14 +4,8 @@ import { AddItemFormComponent } from '../../components/add-item-form/add-item-fo
 import { ExpensesListComponent } from '../../components/expenses-list/expenses-list.component';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
-import {
-  MatDialog,
-  MAT_DIALOG_DATA,
-  MatDialogTitle,
-  MatDialogContent,
-} from '@angular/material/dialog';
+import { MatDialogTitle, MatDialogContent } from '@angular/material/dialog';
 import { EditAddItemFormComponent } from '../../components/edit-add-item-form/edit-add-item-form.component';
-import { CommonService } from '../../services/common.service';
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -29,7 +23,7 @@ import { CommonService } from '../../services/common.service';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent implements OnInit {
-  constructor(private commonService: CommonService) {}
+  constructor() {}
   ngOnInit(): void {
     this.isItemsEmpty();
   }
